@@ -11,12 +11,12 @@ const Players = ({ player }) => {
       </Link>
 
       <Card.Body>
-        <Link to={`player/${player._id}`}>
+        <Link to={`/player/${player._id}`}>
           <Card.Title as='div'>
-            <strong>{player.firstName} {player.lastName}</strong>
+            <strong>{player.fullName}</strong>
           </Card.Title>
           <Card.Title as='div'>
-            <strong>{player.position} | <strong>{player.nationality}</strong> </strong>
+            <strong>{player.position} </strong> - <strong>{player.nationality}</strong>
           </Card.Title>
         </Link>
       </Card.Body>
