@@ -1,38 +1,43 @@
 const players = [
   {
-    id: 1,
+    _id: 1,
+    image: '/images/Leo.jpeg',
     firstName: 'Leo',
     lastName: 'Zamudio',
-    image: '../public/images/Leo.jpeg',
-    Nationality: 'Mexico'
+    position: 'Midfielder',
+    nationality: 'Mexico'
   },
   {
-    id: 2,
+    _id: 2,
+    image: '/images/Cory.jpeg',
     firstName: 'Cory',
     lastName: 'Coryyy',
-    image: '../public/images/Cory.jpeg',
-    Nationality: 'Usa'
+    position: 'Midfielder',
+    nationality: 'USA'
   },
   {
-    id: 3,
+    _id: 3,
+    image: '/images/Eric.jpeg',
     firstName: 'Eric',
     lastName: 'Estrada',
-    image: '../public/images/Eric.jpeg',
-    Nationality: 'Mexico'
+    position: 'Midfielder',
+    nationality: 'Mexico'
   },
   {
-    id: 3,
+    _id: 3,
+    image: '/images/Jordan.png',
     firstName: 'Jordan',
     lastName: 'Coperland',
-    image: '../public/images/Jordan.jpeg',
-    Nationality: 'United State'
+    position: 'Defender',
+    nationality: 'USA'
   },
   {
-    id: 4,
+    _id: 4,
+    image: '/images/Khalil.jpeg',
     firstName: 'Khalil',
     lastName: 'Khalilll',
-    image: '../public/images/Khalil.jpeg',
-    Nationality: 'Mali'
+    position: 'Defender',
+    nationality: 'Mali'
   }
 ]
 
