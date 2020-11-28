@@ -1,9 +1,19 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { Row, Col } from 'react-bootstrap';
-import players from '../players';
 import Players from '../components/Players';
+import axios from 'axios';
+
 
 const HomeScreen = () => {
+  const [players, setPlayers] = useState([]);
+
+  useEffect(() => {
+     const fetchPlayers = async () => {
+       const {data} = await axios.get('/api/players');
+       setPlayers(data);
+     }
+     fetchPlayers();
+  }, [])
   return (
     <>
       <h1>The Team</h1>

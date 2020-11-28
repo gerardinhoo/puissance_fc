@@ -1,11 +1,18 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import { Row, Col, Image, ListGroup } from 'react-bootstrap';
-import players from '../players';
+import axios from 'axios';
 
 const PlayerScreen = ({ match }) => {
-  const player = players.find((p) => p._id === match.params.id)
+  const [player, setPlayer] = useState({});
 
+  useEffect(() => {
+    const fetchPlayer = async () => {
+      const {data} = await axios.get(`/api/players/${match.params.id}`);
+      setPlayer(data);
+    }
+    fetchPlayer();
+  }, [match.params.id]);
   return (
     <>
       <Link className='btn btn-dark my-3' to='/'>
@@ -22,11 +29,11 @@ const PlayerScreen = ({ match }) => {
             </ListGroup.Item>
 
             <ListGroup.Item>
-              <h3>{player.position}</h3>
+              <h3>Position: {player.position}</h3>
             </ListGroup.Item>
 
             <ListGroup.Item>
-              <h3>{player.nationality}</h3>
+              <h3>Origin: {player.nationality}</h3>
             </ListGroup.Item>
           </ListGroup>
         </Col>
