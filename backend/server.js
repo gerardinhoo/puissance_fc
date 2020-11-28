@@ -1,11 +1,12 @@
 const express = require('express');
-const app = express();
-
+const dotenv = require('dotenv');
 const players = require('./data/players')
 
+dotenv.config()
+const app = express();
 
 app.get('/', (req, res) => {
-  res.send('Something to start with')
+  res.send('Voici le debut...')
 })
 
 app.get('/api/players', (req, res) => {
@@ -17,5 +18,5 @@ app.get('/api/players/:id', (req, res) => {
   res.json(player);
 })
 
-const PORT = 5000;
-app.listen(PORT, () => {console.log(`Server is listenning on ${PORT}`)})
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {console.log(`Server is listenning on port ${PORT} in ${process.env.NODE_ENV} mode`)})
