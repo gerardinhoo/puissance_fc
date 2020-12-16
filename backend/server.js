@@ -1,8 +1,12 @@
 const express = require('express');
+const connectDB = require('./config/db');
 const dotenv = require('dotenv');
 const players = require('./data/players')
 
-dotenv.config()
+dotenv.config();
+
+connectDB();
+
 const app = express();
 
 app.get('/', (req, res) => {
