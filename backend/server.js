@@ -1,4 +1,5 @@
 const express = require('express');
+const colors = require('colors');
 const connectDB = require('./config/db');
 const dotenv = require('dotenv');
 const players = require('./data/players')
@@ -23,4 +24,4 @@ app.get('/api/players/:id', (req, res) => {
 })
 
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {console.log(`Server is listenning on port ${PORT} in ${process.env.NODE_ENV} mode`)})
+app.listen(PORT, () => {console.log(`Server is listenning on port ${PORT} in ${process.env.NODE_ENV} mode`.yellow.underline.bold)})
